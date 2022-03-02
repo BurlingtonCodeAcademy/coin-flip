@@ -1,0 +1,85 @@
+body {
+  background-color: darkcyan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#flip-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: darkblue;
+  width: 60vw;
+  box-shadow: 15px, 25px, 45px, darkblue;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+.coin {
+  height: 210px;
+  width: 210px;
+  margin: 50px auto;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.coin img {
+  width: 200px;
+}
+
+#heads-coin {
+  position: absolute;
+}
+
+@keyframes flip-heads {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(1800deg);
+  }
+}
+
+#tails-coin {
+  position: absolute;
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes flip-tails {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(1980deg);
+  }
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+
+button {
+  color: aqua;
+  background-color: black;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid aqua;
+}
+
+button:disabled {
+  color: gray;
+  border: 1px solid gray;
+}
+
+#scores {
+  display: flex;
+  justify-content: space-around;
+  width: 20vw;
+  color: aqua;
+}
