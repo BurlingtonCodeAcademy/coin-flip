@@ -34,22 +34,29 @@ flipButton.addEventListener("click", () => {
     //incrementing the tails count by 1
     tails++;
   }
-  // 
+  // Disabling the flip button while the coin is flipping
   flipButton.disabled = true;
+  // Update the flip tally once the coin has stopped flipping
   setTimeout(function () {
     headsCount.textContent = `Heads: ${heads}`;
     tailsCount.textContent = `Tails: ${tails}`;
   }, 3000);
+  // Re-enable the flip button after 3 seconds
   setTimeout(function () {
     flipButton.disabled = false;
   }, 3000);
 });
 
+// Adding a click event listener to our reset button
 resetButton.addEventListener("click", () => {
+  // Reset the flip tally to zero
   heads = 0;
   tails = 0;
+  // Update the score text content
   headsCount.textContent = `Heads: ${heads}`;
   tailsCount.textContent = `Tails: ${tails}`;
+  // Re-enable the flip button
   flipButton.disabled = false;
+  // Reset the coin flip animation
   coin.style.animation = "none";
 });
