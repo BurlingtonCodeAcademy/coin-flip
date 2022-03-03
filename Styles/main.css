@@ -5,6 +5,7 @@ body {
   align-items: center;
 }
 
+/* Gameplay area containing our coins, buttons and scores */
 #flip-area {
   display: flex;
   justify-content: center;
@@ -17,6 +18,7 @@ body {
   justify-self: center;
 }
 
+/* Coin class for styling the coin container */
 .coin {
   height: 210px;
   width: 210px;
@@ -25,23 +27,28 @@ body {
   transform-style: preserve-3d;
 }
 
+/* Styling both coin images to be the same size*/
 .coin img {
   width: 200px;
 }
 
+/* Positioning heads coin absolute */
 #heads-coin {
   position: absolute;
 }
 
+/* Flipping animation for the heads coin */
 @keyframes flip-heads {
   0% {
     transform: rotateX(0);
   }
   100% {
+    /* rotates 1800 degrees to flip 10 times and end up facing up */
     transform: rotateX(1800deg);
   }
 }
 
+/* Styling tails coin to position it absolute and flip it 180 degrees so it is not visible until "flipped" */
 #tails-coin {
   position: absolute;
   transform: rotateX(180deg);
@@ -49,21 +56,25 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
+/* Flipping animation for tails coin */
 @keyframes flip-tails {
   0% {
     transform: rotateX(0);
   }
   100% {
+    /* rotates 1980 degrees to flip 10 times and end up facing up */
     transform: rotateX(1980deg);
   }
 }
 
+/* Styling the buttons container */
 #buttons {
   display: flex;
   justify-content: space-between;
   width: 20vw;
 }
 
+/* Styling both buttons and styling while disabled */
 button {
   color: aqua;
   background-color: black;
@@ -77,6 +88,7 @@ button:disabled {
   border: 1px solid gray;
 }
 
+/* scores container */
 #scores {
   display: flex;
   justify-content: space-around;
