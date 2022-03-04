@@ -1,8 +1,26 @@
 body {
-  background-color: darkcyan;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Gameplay area containing our coins, buttons and scores */
+h1 {
+  font-family: 'Press Start 2P', monospace;
+  color: white;
+}
+
+.blinking-animation {
+  display: inline;
+  /* Utilize the blink-animation keyframe, have the duration be .5 seconds, use the steps timing function, run infinitely */
+  animation: blink-animation .5s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
 
 /* Gameplay area containing our coins, buttons and scores */
@@ -13,8 +31,8 @@ body {
   flex-direction: column;
   background-color: darkblue;
   width: 60vw;
-  box-shadow: 15px, 25px, 45px, darkblue;
-  border-radius: 10px;
+  box-shadow: 1vw, 1vw, 1vw, darkblue;
+  border-radius: 3vw;
   justify-self: center;
 }
 
@@ -74,13 +92,20 @@ body {
   width: 20vw;
 }
 
-/* Styling both buttons and styling while disabled */
+/* Styling both buttons and styling while disabled and hovered */
 button {
-  color: aqua;
-  background-color: black;
+  font-family: 'Press Start 2P', monospace;
+  font-size: vw;
+  background-color: aqua;
+  color: black;
   width: 100px;
-  padding: 10px;
+  padding: 1vw;
   border: 1px solid aqua;
+}
+
+button:hover {
+background-color: darkblue;
+color: aqua;
 }
 
 button:disabled {
@@ -91,7 +116,10 @@ button:disabled {
 /* scores container */
 #scores {
   display: flex;
-  justify-content: space-around;
-  width: 20vw;
+  width: 80%;
+  margin: 1vw;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2rem;
+  justify-content: space-between;
   color: aqua;
 }
